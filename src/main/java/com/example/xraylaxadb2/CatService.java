@@ -29,4 +29,9 @@ public class CatService {
         }
     }
 
+    @XRayTimed(segmentName = "Get cats")
+    public Iterable<Cat> getCats() {
+        return repository.findAll();
+    }
+
 }
